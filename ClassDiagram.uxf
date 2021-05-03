@@ -14,7 +14,7 @@
 - GetPieceCharacter(IPiece p)
 --
 + StartTurn()
-+ OutputPosition(IPosition p)
++ OutputPosition(IPosition p, Color rotation)
 + ReadMove()</panel_attributes>
     <additional_attributes/>
   </element>
@@ -180,7 +180,7 @@ GetMove(IPosition current, IPosition previous, Color whoseTurn)</panel_attribute
 IUserInterface
 --
 + StartTurn()
-+ OutputPosition(IPosition p)
++ OutputPosition(IPosition p, Color rotation)
 + ReadMove()
 </panel_attributes>
     <additional_attributes/>
