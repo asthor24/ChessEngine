@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1164</x>
+      <y>528</y>
+      <w>144</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>ConsoleUserInterface
+--
+- GetPieceCharacter(IPiece p)
+--
++ StartTurn()
++ OutputPosition(IPosition p)
++ ReadMove()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>240</y>
+      <w>270</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Computer
+--
+--
+GetMove(IPosition current, IPosition previous, Color whoseTurn)
+--
+Currently just give the leftmost pawn move
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>984</x>
+      <y>246</y>
+      <w>282</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Human
+--
+- IUserInterface ui
+--
++ GetMove(IPosition current, IPosition previous Color whoseTurn) : Move
+--
+GetMove also prints out the board</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>840</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;struct&gt;&gt;
+Position
+--
+--
++ IEnumerable&lt;IPiece&gt; Pieces
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>732</y>
+      <w>198</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>PositionJudge
+--
+--
++ IsCheckMate(IPosition p, Color whoseTurn) : bool
++ IsCheck(IPosition p, Color whoseTurn) : bool
++ IsStaleMate(IPosition p, Color whoseTurn) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1146</x>
+      <y>846</y>
+      <w>126</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+Color
+--
+- White
+- Black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>840</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;struct&gt;&gt;
+Move
+--
+--
++ From : Cell
++ To : Cell
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>840</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>struct: Cell
+--
+- x: int
+- y: int
+--
++ X: int
++ Y: int
+--
+Throw exceptions if these values go outside the board</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>444</x>
+      <y>54</y>
+      <w>276</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Game
+--
+- playerOne : IPlayer
+- playerTwo : IPlayer
+--
++ GameRunning(IPlayer playerOne, IPlayer playerTwo) : Game
++ Run() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>864</x>
+      <y>96</y>
+      <w>264</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IPlayer
+--
+--
+GetMove(IPosition current, IPosition previous, Color whoseTurn)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1164</x>
+      <y>366</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IUserInterface
+--
++ StartTurn()
++ OutputPosition(IPosition p)
++ ReadMove()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>474</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1188</x>
+      <y>294</y>
+      <w>48</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>984</x>
+      <y>144</y>
+      <w>174</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>804</x>
+      <y>144</y>
+      <w>198</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6</x>
+      <y>336</y>
+      <w>294</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>PositionManager
+--
+- moveJudge : IMoveJudge
+- gameHasStarted : bool
+--
++ PositionManager(IPosition current)
++ SimulateMove(IPosition p, IMove m, Color whoseTurn) : bool if successful
++ CurrentPosition : IPosition
++ PreviousPosition : IPosition
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>192</y>
+      <w>216</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>IPositionManager
+--
++ SimulateMove(IPosition p, IMove m)
++ CurrentPosition : IPosition
++ PreviousPosition : IPosition</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>324</x>
+      <y>336</y>
+      <w>288</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;hypothetical&gt;&gt;
+EnginePositionManager
+--
++ PositionManager(IPosition current, IPosition previous)
++ SimulateMove(IPosition p, IMove m, Color whoseTurn) : bool if successful
++ CurrentPosition : IPosition
++ PreviousPosition : IPosition
+--
+Throws exceptions for invalid moves</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>702</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IPiece
+--
++ Type : PieceType 
++ Position : Cell</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>834</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+PieceType
+--
+- King
+- Queen
+- Bishop
+- Knight
+- Rook
+- Pawn </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>546</y>
+      <w>354</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>IMoveJudge 
+--
++ IsMoveAllowed(IPosition current, IPosition previous, Color whoseTurn, IMove move) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1242</x>
+      <y>714</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Constants
+--
+_+ BOARD_WIDTH_
+_+ BOARD_HEIGHT_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>66</x>
+      <y>444</y>
+      <w>18</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>612</y>
+      <w>360</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>MoveJudge
+--
+- positionJudge : PositionJudge
+--
++ IsMoveAllowed(IPosition current, IPosition previous, Color whoseTurn, IMove move) : bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>588</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>114</x>
+      <y>654</y>
+      <w>18</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>114</y>
+      <w>216</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>138</x>
+      <y>300</y>
+      <w>114</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>246</x>
+      <y>300</y>
+      <w>234</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>660</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt; 
+ICell
+--
++ X : int
++ Y : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>768</y>
+      <w>18</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>678</x>
+      <y>774</y>
+      <w>18</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>660</y>
+      <w>126</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IMove
+--
++ From : Cell
++ To : Cell</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>660</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IPosition
+--
++ Pieces : IEnumerable&lt;IPiece&gt; Pieces</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>768</y>
+      <w>18</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>840</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Piece
+--
++ Type : PieceType
++ Position : Cell</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>96</y>
+      <w>162</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=2</panel_attributes>
+    <additional_attributes>250.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
