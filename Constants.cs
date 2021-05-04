@@ -19,11 +19,27 @@ namespace ChessEngine {
                     }
                 },
                 new Piece {
+                    Color = Color.White,
+                    Type = PieceType.Queen,
+                    Placement = new Cell {
+                        X = 2,
+                        Y = 1
+                    }
+                },
+                new Piece {
                     Color = Color.Black,
                     Type = PieceType.King,
                     Placement = new Cell {
                         X = 8,
-                        Y = 1
+                        Y = 8
+                    }
+                },
+                new Piece {
+                    Color = Color.Black,
+                    Type = PieceType.Queen,
+                    Placement = new Cell {
+                        X = 7,
+                        Y = 8
                     }
                 }
             }

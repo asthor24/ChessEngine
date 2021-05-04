@@ -9,11 +9,18 @@ namespace ChessEngine {
         }
 
         public void Run() {
-            white.GetMove(
-                Constants.StartingPosition,
-                Constants.StartingPosition,
-                Color.White
-            );
+            while(true) {
+                white.GetMove(
+                    Constants.StartingPosition,
+                    Constants.StartingPosition,
+                    Color.White
+                );
+                black.GetMove(
+                    Constants.StartingPosition,
+                    Constants.StartingPosition,
+                    Color.Black
+                );
+            }
         }
 
         private IPlayer white;
